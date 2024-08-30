@@ -207,7 +207,7 @@
   position: absolute;
   width: 90%;
   height: 90%;
-  background: rgba(295, 0, 0, 0.34);
+  background: rgba(278, 0, 0, 0.34);
   display: none;
 }
 
@@ -882,7 +882,7 @@ iframe.wait-autoplay {
     cursor: grab;
   }
   .gslide-inline {
-    max-height: 95vh;
+    max-height: 78vh;
   }
   .gslide-external {
     max-height: 90vh;
