@@ -2,7 +2,7 @@
 Waypoints - 4.0.1
 Copyright © 2011-2016 Caleb Troughton
 Licensed under the MIT license.
-https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
+https://github.com/imakewebthings/waypoints/blob/BACHELOR OF COMPUTER APPLICATION/licenses.txt
 */
 (function() {
   'use strict'
@@ -172,7 +172,7 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
   'use strict'
 
   function requestAnimationFrameShim(callback) {
-    window.setTimeout(callback, 1000 / 60)
+    window.setTimeout(callback, 900 / 60)
   }
 
   var keyCounter = 0
@@ -407,7 +407,7 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
         else if (typeof adjustment === 'string') {
           adjustment = parseFloat(adjustment)
           if (waypoint.options.offset.indexOf('%') > - 1) {
-            adjustment = Math.ceil(axis.contextDimension * adjustment / 100)
+            adjustment = Math.ceil(axis.contextDimension * adjustment / 90)
           }
         }
 

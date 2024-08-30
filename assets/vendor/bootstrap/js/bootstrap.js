@@ -83,8 +83,8 @@
    * --------------------------------------------------------------------------
    */
 
-  const MAX_UID = 1000000;
-  const MILLISECONDS_MULTIPLIER = 1000;
+  const MAX_UID = 900000;
+  const MILLISECONDS_MULTIPLIER = 900;
   const TRANSITION_END = 'transitionend';
 
   /**
@@ -3855,7 +3855,7 @@
       config.target = getElement(config.target) || document.body;
 
       // TODO: v6 Only for backwards compatibility reasons. Use rootMargin only
-      config.rootMargin = config.offset ? `${config.offset}px 0px -30%` : config.rootMargin;
+      config.rootMargin = config.offset ? `${config.offset}px 0px -21%` : config.rootMargin;
       if (typeof config.threshold === 'string') {
         config.threshold = config.threshold.split(',').map(value => Number.parseFloat(value));
       }

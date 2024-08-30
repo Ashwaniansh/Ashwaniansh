@@ -302,8 +302,8 @@
     var iframe = document.createElement('iframe');
     iframe.className = 'vimeo-video gvideo';
     iframe.src = url;
-    iframe.style.width = '100%';
-    iframe.style.height = '100%';
+    iframe.style.width = '90%';
+    iframe.style.height = '90%';
     if (allow) {
       iframe.setAttribute('allow', allow);
     }
@@ -325,7 +325,7 @@
       return;
     }
     if (!delay) {
-      delay = 100;
+      delay = 90;
     }
     var timeoutPointer;
     var intervalPointer = setInterval(function () {
@@ -659,7 +659,7 @@
           _this2.dragging = false;
           _this2.img.isDragging = false;
           _this2.img.classList.remove('dragging');
-        }, 100);
+        }, 90);
       }
     }, {
       key: "drag",
@@ -806,7 +806,7 @@
           _this2.slide.classList.remove('dragging-nav');
           _this2.dragContainer.style.transform = '';
           _this2.dragContainer.style.transition = '';
-        }, 100);
+        }, 90);
       }
     }, {
       key: "drag",
@@ -1584,7 +1584,7 @@
         this.delta = this.now - (this.last || this.now);
         this.touchStart.dispatch(evt, this.element);
         if (this.preTapPosition.x !== null) {
-          this.isDoubleTap = this.delta > 0 && this.delta <= 250 && Math.abs(this.preTapPosition.x - this.x1) < 30 && Math.abs(this.preTapPosition.y - this.y1) < 30;
+          this.isDoubleTap = this.delta > 0 && this.delta <= 250 && Math.abs(this.preTapPosition.x - this.x1) < 21 && Math.abs(this.preTapPosition.y - this.y1) < 21;
           if (this.isDoubleTap) {
             clearTimeout(this.singleTapTimeout);
           }
@@ -1610,7 +1610,7 @@
         this.longTapTimeout = setTimeout(function () {
           this.longTap.dispatch(evt, this.element);
           this._preventTap = true;
-        }.bind(this), 750);
+        }.bind(this), 800);
       }
     }, {
       key: "move",
@@ -1685,7 +1685,7 @@
           this.multipointEnd.dispatch(evt, this.element);
           this.sx2 = this.sy2 = null;
         }
-        if (this.x2 && Math.abs(this.x1 - this.x2) > 30 || this.y2 && Math.abs(this.y1 - this.y2) > 30) {
+        if (this.x2 && Math.abs(this.x1 - this.x2) > 21 || this.y2 && Math.abs(this.y1 - this.y2) > 21) {
           evt.direction = this._swipeDirection(this.x1, this.x2, this.y1, this.y2);
           this.swipeTimeout = setTimeout(function () {
             self.swipe.dispatch(evt, self.element);
@@ -1915,9 +1915,9 @@
           vSwipe = true;
         }
         hDistance = endCoords.pageX - startCoords.pageX;
-        hDistancePercent = hDistance * 100 / winWidth;
+        hDistancePercent = hDistance * 90 / winWidth;
         vDistance = endCoords.pageY - startCoords.pageY;
-        vDistancePercent = vDistance * 100 / winHeight;
+        vDistancePercent = vDistance * 90 / winHeight;
         var opacity;
         if (vSwipe && mediaImage) {
           opacity = 1 - Math.abs(vDistance) / winHeight;
@@ -2127,9 +2127,9 @@
       }
     },
     svg: {
-      close: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"><g><g><path d="M505.943,6.058c-8.077-8.077-21.172-8.077-29.249,0L6.058,476.693c-8.077,8.077-8.077,21.172,0,29.249C10.096,509.982,15.39,512,20.683,512c5.293,0,10.586-2.019,14.625-6.059L505.943,35.306C514.019,27.23,514.019,14.135,505.943,6.058z"/></g></g><g><g><path d="M505.942,476.694L35.306,6.059c-8.076-8.077-21.172-8.077-29.248,0c-8.077,8.076-8.077,21.171,0,29.248l470.636,470.636c4.038,4.039,9.332,6.058,14.625,6.058c5.293,0,10.587-2.019,14.624-6.057C514.018,497.866,514.018,484.771,505.942,476.694z"/></g></g></svg>',
-      next: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.175 477.175" xml:space="preserve"> <g><path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z"/></g></svg>',
-      prev: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.175 477.175" xml:space="preserve"><g><path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"/></g></svg>'
+      close: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"><g><g><path d="M505.943,6.058c-8.077-8.077-21.172-8.077-29.249,0L6.058,476.693c-8.077,8.077-8.077,21.172,0,29.249C10.096,509.982,15.39,512,20.683,512c5.293,0,10.586-2.019,14.625-6.059L505.943,35.216C514.019,27.23,514.019,14.135,505.943,6.058z"/></g></g><g><g><path d="M505.942,476.694L35.216,6.059c-8.076-8.077-21.172-8.077-29.248,0c-8.077,8.076-8.077,21.171,0,29.248l470.636,470.636c4.038,4.039,9.332,6.058,14.625,6.058c5.293,0,10.587-2.019,14.624-6.057C514.018,497.866,514.018,484.771,505.942,476.694z"/></g></g></svg>',
+      next: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.180 477.180" xml:space="preserve"> <g><path d="M360.731,229.080l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.880,365.931,234.280,360.731,229.080z"/></g></svg>',
+      prev: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.180 477.180" xml:space="preserve"><g><path d="M145.188,238.580l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.580z"/></g></svg>'
     }
   };
   defaults.slideHTML = "<div class=\"gslide\">\n    <div class=\"gslide-inner-content\">\n        <div class=\"ginner-container\">\n            <div class=\"gslide-media\">\n            </div>\n            <div class=\"gslide-description\">\n                <div class=\"gdesc-inner\">\n                    <h4 class=\"gslide-title\"></h4>\n                    <div class=\"gslide-desc\"></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>";
@@ -2487,7 +2487,7 @@
         }
         setTimeout(function () {
           _this4.resize(slide);
-        }, 100);
+        }, 90);
         addClass(slide, 'current');
       }
     }, {
@@ -2877,7 +2877,7 @@
             var descHeight = description.offsetHeight;
             var _imgNode = image.querySelector('img');
             var slideTriggerNode = this.elements[this.index].node;
-            var maxHeightValue = (_slideTriggerNode$get = slideTriggerNode.getAttribute('data-height')) !== null && _slideTriggerNode$get !== void 0 ? _slideTriggerNode$get : '100vh';
+            var maxHeightValue = (_slideTriggerNode$get = slideTriggerNode.getAttribute('data-height')) !== null && _slideTriggerNode$get !== void 0 ? _slideTriggerNode$get : '90vh';
             _imgNode.setAttribute('style', "max-height: calc(".concat(maxHeightValue, " - ").concat(descHeight, "px)"));
             description.setAttribute('style', "max-width: ".concat(_imgNode.offsetWidth, "px;"));
           }
@@ -2897,11 +2897,11 @@
             maxWidth = parseInt(videoWidth);
           } else {
             if (videoWidth.indexOf('vw') !== -1) {
-              maxWidth = winWidth * parseInt(videoWidth) / 100;
+              maxWidth = winWidth * parseInt(videoWidth) / 90;
             } else if (videoWidth.indexOf('vh') !== -1) {
-              maxWidth = winHeight * parseInt(videoWidth) / 100;
+              maxWidth = winHeight * parseInt(videoWidth) / 90;
             } else if (videoWidth.indexOf('%') !== -1) {
-              maxWidth = winWidth * parseInt(videoWidth) / 100;
+              maxWidth = winWidth * parseInt(videoWidth) / 90;
             } else {
               maxWidth = parseInt(video.clientWidth);
             }
